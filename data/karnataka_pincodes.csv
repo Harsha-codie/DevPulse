@@ -1,0 +1,82 @@
+pincode,village,taluk,district,latitude,longitude
+560001,Bangalore GPO,Bangalore,Bangalore Urban,12.9716,77.5946
+560002,Bangalore City,Bangalore,Bangalore Urban,12.9698,77.5986
+560003,Bangalore Cantonment,Bangalore,Bangalore Urban,12.9833,77.6056
+560004,Malleshwaram,Bangalore,Bangalore Urban,13.0039,77.5704
+560005,Rajajinagar,Bangalore,Bangalore Urban,12.9913,77.5550
+560006,Chamrajpet,Bangalore,Bangalore Urban,12.9547,77.5735
+563130,Malur,Kolar,Kolar,13.0051,77.9409
+563101,Kolar,Kolar,Kolar,13.1373,78.1298
+563114,Bangarpet,Kolar,Kolar,12.9915,78.1723
+563125,Mulbagal,Kolar,Kolar,13.1652,78.3936
+571401,Mandya,Mandya,Mandya,12.5218,76.8951
+571426,Maddur,Maddur,Mandya,12.5806,77.0426
+571440,Malavalli,Malavalli,Mandya,12.3836,77.0596
+571601,Mysore,Mysore,Mysore,12.2958,76.6394
+571602,Mysore South,Mysore,Mysore,12.2833,76.6389
+574111,Bantwal,Bantwal,Dakshina Kannada,12.8950,75.0350
+574142,Puttur,Puttur,Dakshina Kannada,12.7596,75.1991
+574201,Mangalore,Mangalore,Dakshina Kannada,12.9141,74.8560
+575001,Mangalore City,Mangalore,Dakshina Kannada,12.8698,74.8428
+575003,Surathkal,Mangalore,Dakshina Kannada,13.0079,74.7948
+576101,Udupi,Udupi,Udupi,13.3409,74.7421
+576111,Manipal,Udupi,Udupi,13.3500,74.7869
+577001,Davangere,Davangere,Davangere,14.4644,75.9218
+577101,Channagiri,Channagiri,Davangere,14.0241,75.9263
+577201,Harihar,Harihar,Davangere,14.5166,75.8063
+580001,Dharwad,Dharwad,Dharwad,15.4589,75.0078
+580007,Hubli,Hubli,Dharwad,15.3647,75.1240
+580020,Hubli South,Hubli,Dharwad,15.3450,75.1370
+581115,Haveri,Haveri,Haveri,14.7951,75.3994
+581201,Ranibennur,Ranibennur,Haveri,14.6232,75.6294
+582101,Gadag,Gadag,Gadag,15.4315,75.6191
+582119,Ron,Ron,Gadag,15.6994,75.7275
+583101,Bellary,Bellary,Bellary,15.1394,76.9214
+583119,Hospet,Hospet,Ballari,15.2695,76.3870
+583134,Sandur,Sandur,Ballari,15.0847,76.5473
+585101,Gulbarga,Gulbarga,Gulbarga,17.3297,76.8343
+585102,Gulbarga City,Gulbarga,Gulbarga,17.3350,76.8353
+585103,Sedam,Sedam,Gulbarga,17.1833,77.2833
+585201,Yadgir,Yadgir,Yadgir,16.7700,77.1380
+585211,Shahapur,Shahapur,Yadgir,16.6955,76.8450
+586101,Bijapur,Bijapur,Bijapur,16.8302,75.7100
+586109,Indi,Indi,Bijapur,17.1771,75.9493
+586117,Sindagi,Sindagi,Bijapur,16.9149,76.2362
+587101,Bagalkot,Bagalkot,Bagalkot,16.1869,75.6972
+587201,Jamkhandi,Jamkhandi,Bagalkot,16.5058,75.2903
+590001,Belgaum,Belgaum,Belgaum,15.8497,74.4977
+590003,Belgaum Camp,Belgaum,Belgaum,15.8667,74.5000
+591101,Athani,Athani,Belgaum,16.7314,75.0633
+591211,Chikodi,Chikodi,Belgaum,16.4294,74.5904
+591237,Raybag,Raybag,Belgaum,16.4946,74.7742
+571218,Hunsur,Hunsur,Mysore,12.3016,76.2920
+571211,Heggadadevankote,H.D. Kote,Mysore,12.0046,76.3019
+571234,Periyapatna,Periyapatna,Mysore,12.3433,76.0981
+572101,Tumkur,Tumkur,Tumkur,13.3409,77.1006
+572102,Tumkur City,Tumkur,Tumkur,13.3392,77.1064
+572103,Gubbi,Gubbi,Tumkur,13.3102,76.9433
+572104,Tiptur,Tiptur,Tumkur,13.2567,76.4776
+573101,Hassan,Hassan,Hassan,13.0061,76.0961
+573115,Arkalgud,Arkalgud,Hassan,12.7608,76.0604
+573134,Holenarasipura,Holenarasipura,Hassan,12.7895,76.2063
+573201,Channarayapatna,Channarayapatna,Hassan,12.9095,76.3873
+573211,Sakaleshpur,Sakleshpur,Hassan,12.9410,75.7862
+562101,Kanakapura,Kanakapura,Ramanagara,12.5449,77.4263
+562109,Channapatna,Channapatna,Ramanagara,12.6516,77.2068
+562117,Ramanagara,Ramanagara,Ramanagara,12.7200,77.2800
+562125,Magadi,Magadi,Ramanagara,12.9577,77.2275
+561201,Nelamangala,Nelamangala,Bangalore Rural,13.0989,77.3936
+561203,Doddaballapur,Doddaballapur,Bangalore Rural,13.2926,77.5482
+561211,Devanahalli,Devanahalli,Bangalore Rural,13.2490,77.7120
+577501,Chitradurga,Chitradurga,Chitradurga,14.2226,76.3980
+577511,Molakalmuru,Molakalmuru,Chitradurga,14.7177,76.7467
+577522,Challakere,Challakere,Chitradurga,14.3151,76.6510
+577545,Holalkere,Holalkere,Chitradurga,14.0470,76.1833
+577601,Hiriyur,Hiriyur,Chitradurga,13.9441,76.6192
+591304,Gokak,Gokak,Belgaum,16.1708,74.8235
+591313,Bailhongal,Bailhongal,Belgaum,15.8163,74.8633
+591317,Saundatti,Saundatti,Belgaum,15.7833,75.1167
+577101,Channagiri,Channagiri,Davangere,14.0241,75.9263
+577120,Honnali,Honnali,Davangere,14.2416,75.6475
+591307,Hukkeri,Hukkeri,Belgaum,16.2373,74.6092
+591316,Khanapur,Khanapur,Belgaum,15.6414,74.5072

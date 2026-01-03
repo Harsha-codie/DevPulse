@@ -1,0 +1,53 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:./data/cropplanner;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  # Weather API configuration
+  openweather:
+    api-key: 4cd4b8b057cbb40195f157c3a07e3620
+  ipapi:
+    url: https://ipapi.co/json
+server:
+  port: 8080
+openweather:
+  api-key: 4cd4b8b057cbb40195f157c3a07e3620
+gemini:
+  api:
+    key: AIzaSyBoL--v1QVrSFC-WZ-yAaCTUbSE1c_s0GQ
+    base-url: https://generativelanguage.googleapis.com/v1beta
+  model: ${GEMINI_MODEL:gemini-2.5-flash}
+ipapi:
+  base-url: ${IPAPI_BASE_URL:https://ipapi.co}
+datasets:
+  dir: ${DATASETS_DIR:./data}
+
+# Market trends CSV configuration
+market:
+  csv:
+    path: ${MARKET_CSV_PATH:../data/market_trends.csv}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+# Soil data hybrid fetch system configuration
+soil:
+  cache:
+    enabled: true  # Set to false to disable caching
