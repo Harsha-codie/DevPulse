@@ -6,7 +6,9 @@
 [![React](https://img.shields.io/badge/React-18.2-blue)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.4-blue)](https://www.typescriptlang.org/)
 
-An intelligent, bilingual (English/ಕನ್ನಡ) crop recommendation system powered by **Google Gemini AI**, designed specifically for Karnataka farmers. Get district-level crop recommendations, fertilizer schedules, seed dealer information with pricing, and cost-profit analysis - all backed by accurate agricultural data from 31 Karnataka districts.
+An intelligent, bilingual (English/ಕನ್ನಡ) **data-driven crop recommendation system** designed specifically for Karnataka farmers. Combining **multiple data sources** - historical market trends (900+ records), real-time weather data, soil analysis, district crop suitability datasets, and **Google Gemini AI** - to deliver **granular village-level recommendations**.
+
+Supports **pincode-based, village-based, and GPS coordinate-based** input for precise, location-specific crop recommendations, fertilizer schedules, seed dealer information with pricing, and cost-profit analysis.
 
 **Built with ❤️ for Karnataka farmers**
 
@@ -14,19 +16,30 @@ An intelligent, bilingual (English/ಕನ್ನಡ) crop recommendation system p
 
 ## 🎯 Features
 
-### 🤖 AI-Powered Recommendations
-- **Gemini 2.0 Flash** integration for intelligent crop recommendations
+### 📊 Multi-Source Data-Driven Recommendations
+- **Primary Data Sources**:
+  - **900+ market trend records** from Karnataka districts (2021-2024)
+  - **31 district crop suitability datasets** (93 crop records with seasons and scores)
+  - **Real-time weather data** (temperature, humidity, precipitation)
+  - **Soil composition analysis** (clay, sand, pH from SoilGrids)
+  - **Village/Pincode databases** for granular location mapping
+- **AI Enhancement**: **Gemini 2.0 Flash** analyzes combined data for intelligent final recommendations
 - **Ultra-strict Kannada enforcement** with proper Unicode rendering
-- Context-aware suggestions based on district, season, soil type, and weather
-- District-specific crop suitability data (31 districts, 3 crops each)
+- **Granular village-level** context-aware suggestions
+- **Season-aware filtering** - Backend filters crops by district+season before AI analysis
 
 ### 🌱 Comprehensive Agricultural Planning
 
 #### Quick Start Workflow
-1. **One-click auto-detection** - GPS location → District → Soil & Weather analysis
-2. **Top 3 crop recommendations** with confidence scores and Kannada explanations
+1. **One-click auto-detection** - GPS location → **Village/Taluk/District** → Soil & Weather analysis
+2. **Top 3 crop recommendations** powered by:
+   - Historical market data analysis for your region
+   - Real-time weather conditions
+   - Soil composition metrics
+   - District crop suitability scores
+   - AI-enhanced reasoning with confidence scores
 3. **Dual action buttons** per crop:
-   - 💰 Calculate profit estimate (yield, costs, revenue, margins)
+   - 💰 Calculate profit estimate (yield, costs, revenue, margins based on market data)
    - 🧪 View fertilizer plan (NPK ratios, quantities, timing)
 4. **Seed dealer recommendations** with:
    - 🏪 Dealer name, location, contact number
@@ -35,23 +48,30 @@ An intelligent, bilingual (English/ಕನ್ನಡ) crop recommendation system p
    - 🏆 Top 1/2/3 ranking badges
 
 #### Manual Search Wizard
-- **3-step progressive workflow**:
-  1. District/Village selection with pincode lookup
-  2. Crop recommendations with scores
-  3. Fertilizer plans + Seed dealers with pricing
+- **3-step progressive workflow** with **granular location input**:
+  1. **Multi-mode location selection**:
+     - 📍 **Pincode-based** (6-digit Karnataka pincodes → auto-resolves to village/taluk/district)
+     - 🏘️ **Village-based** (village name + taluk → district mapping)
+     - 🌍 **GPS coordinates** (latitude/longitude → reverse geocoding)
+  2. Crop recommendations with scores (filtered by your exact location)
+  3. Fertilizer plans + Seed dealers with pricing (location-specific)
 
-### 📊 District-Level Data Excellence
-- **31 Karnataka districts** covered with precise agricultural data
-- **93 crop records** (3 crops per district) with seasons and suitability scores
-- **38 seed dealers** across all major districts (Bangalore, Mysore, Mangalore, Hubli, Belgaum, Uttara Kannada, Dakshina Kannada, Udupi, Hassan, Chikmagalur, Shimoga, Chitradurga, Davangere, Bellary, Mandya, Raichur, Bidar, Gulbarga, Yadgir, Chamarajanagar, Kodagu, Tumkur)
-- **Market trends** with 900+ records for price analysis
+### 📊 Granular Village-Level Data Excellence
+- **Village-level precision**: Supports pincode lookup, village name search, and GPS coordinates
+- **31 Karnataka districts** with underlying village/taluk mappings
+- **93 district crop suitability records** (3 crops per district with seasons and scores)
+- **38 seed dealers** across all major districts with location-based filtering
+- **900+ market trend records** for historical price analysis (2021-2024)
+- **Real-time environmental data** fetched per exact coordinates (weather, soil)
+- **Pincode database** with thousands of Karnataka villages mapped to districts
 
-### 💰 Cost-Profit Analysis
+### 💰 Data-Driven Cost-Profit Analysis
 - Detailed input cost breakdown (seeds, fertilizer, labor, other)
-- Expected yield estimates (min/avg/max quintals per acre)
-- Revenue projections based on market prices
+- Expected yield estimates (min/avg/max quintals per acre) **from crop database**
+- Revenue projections **based on historical market trend data**
 - Net profit calculation with margin percentage
 - Profit range visualization (pessimistic/realistic/optimistic scenarios)
+- **District-specific pricing** from 900+ market records
 
 ### 🌐 Bilingual Support
 - Full **English** and **ಕನ್ನಡ (Kannada)** translations
@@ -73,31 +93,100 @@ An intelligent, bilingual (English/ಕನ್ನಡ) crop recommendation system p
 - Prominent footer display on all pages
 - Available Monday - Saturday, 9 AM - 6 PM IST
 
-### 🌦️ Real-Time Environmental Data
-- **Weather Integration**: OpenWeatherMap API with graceful fallback to mock data
-- **Soil Analysis**: SoilGrids API for composition (Clay, Sand, pH)
-- **Location Services**: GPS-based district detection with Nominatim reverse geocoding
+### 🌦️ Real-Time Environmental Data (Coordinate-Based)
+- **Weather Integration**: OpenWeatherMap API fetches data for **exact GPS coordinates**
+  - Temperature, humidity, precipitation
+  - Graceful fallback to mock data if API fails
+- **Soil Analysis**: SoilGrids API queries **precise latitude/longitude**
+  - Clay, Sand, Silt composition percentages
+  - pH levels (phh2o)
+- **Location Services**: 
+  - **GPS-based reverse geocoding** via Nominatim (coordinates → village/district)
+  - **Pincode resolution** to village/taluk/district
+  - **Village name autocomplete** with suggestions
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Multi-Source Data Architecture
 
 ```
-┌─────────────────────────┐         ┌─────────────────────────┐         ┌─────────────────────┐
-│   React Frontend        │────────▶│  Spring Boot Backend    │────────▶│  External APIs      │
-│   (Vite + TypeScript)   │  REST   │  (Java 22)              │         │                     │
-│   Port: 5173            │◀────────│  Port: 8080             │         │  • Gemini 2.0 Flash │
-│                         │         │                         │         │  • OpenWeather      │
-│  • Tailwind CSS         │         │  • H2 Database          │         │  • SoilGrids (ISRIC)│
-│  • react-i18next        │         │  • Spring Security      │         │  • Nominatim        │
-│  • html2canvas          │         │  • CSV Data Loader      │         │                     │
-│  • jsPDF                │         │  • RESTful APIs         │         └─────────────────────┘
-│  • Language Toggle      │         │  • District Filtering   │
-│                         │         │  • Season-aware Logic   │
-└─────────────────────────┘         └─────────────────────────┘
-                                                 │
-                                                 ▼
-                                    ┌─────────────────────────┐
+┌──────────────────────────────┐
+│   USER INPUT (Village-Level) │
+│  • Pincode (6-digit)         │
+│  • Village + Taluk           │
+│  • GPS Coordinates (lat/lon) │
+└──────────┬───────────────────┘
+           │
+           ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                      React Frontend (Port: 5173)                        │
+│  • Vite + TypeScript  • Tailwind CSS  • react-i18next                  │
+│  • html2canvas + jsPDF  • Language Toggle (EN/KN)                       │
+└──────────────────────────────┬──────────────────────────────────────────┘
+                               │ REST API
+                               ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│              Spring Boot Backend (Port: 8080) - Data Hub                │
+│                                                                          │
+│  ┌──────────────────────────────────────────────────────────────┐      │
+│  │  1️⃣ LOCATION RESOLUTION                                      │      │
+│  │     • Pincode → Village/Taluk/District                       │      │
+│  │     • GPS → Reverse Geocoding (Nominatim)                    │      │
+│  │     • Village Name → District Mapping                        │      │
+│  └──────────────────────────────────────────────────────────────┘      │
+│                              ↓                                          │
+│  ┌──────────────────────────────────────────────────────────────┐      │
+│  │  2️⃣ ENVIRONMENTAL DATA FETCH (Coordinate-Based)             │      │
+│  │     • Weather API → Real-time temp/humidity/rain             │      │
+│  │     • SoilGrids API → Clay/Sand/pH at exact coordinates      │      │
+│  └──────────────────────────────────────────────────────────────┘      │
+│                              ↓                                          │
+│  ┌──────────────────────────────────────────────────────────────┐      │
+│  │  3️⃣ INTERNAL DATA QUERY (H2 Database)                       │      │
+│  │     • District Crop Suitability (93 records, season-aware)   │      │
+│  │     • Market Trends (900+ records, 2021-2024)                │      │
+│  │     • Pincode Database (Karnataka villages)                  │      │
+│  │     • Seed Dealers (38 dealers with prices)                  │      │
+│  └──────────────────────────────────────────────────────────────┘      │
+│                              ↓                                          │
+│  ┌──────────────────────────────────────────────────────────────┐      │
+│  │  4️⃣ DATA AGGREGATION & FILTERING                            │      │
+│  │     • Filter crops by district + current season              │      │
+│  │     • Combine weather + soil + market data                   │      │
+│  │     • Calculate cost-profit from crop database + market      │      │
+│  └──────────────────────────────────────────────────────────────┘      │
+│                              ↓                                          │
+│  ┌──────────────────────────────────────────────────────────────┐      │
+│  │  5️⃣ AI ENHANCEMENT (Gemini 2.0 Flash)                       │      │
+│  │     • Send pre-filtered data + context to Gemini             │      │
+│  │     • Generate Kannada/English recommendations               │      │
+│  │     • Confidence scoring + reasoning                         │      │
+│  └──────────────────────────────────────────────────────────────┘      │
+│                              ↓                                          │
+│  ┌──────────────────────────────────────────────────────────────┐      │
+│  │  6️⃣ RESPONSE ASSEMBLY                                        │      │
+│  │     • Top 3 crops with scores                                │      │
+│  │     • Fertilizer recommendations (NPK)                       │      │
+│  │     • Seed dealers (filtered by district + crop)             │      │
+│  │     • Profit estimates (market-data based)                   │      │
+│  └──────────────────────────────────────────────────────────────┘      │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                          External APIs                                   │
+│  • Google Gemini 2.0 Flash (AI reasoning)                               │
+│  • OpenWeatherMap (weather per coordinates)                             │
+│  • SoilGrids - ISRIC (soil data per coordinates)                        │
+│  • Nominatim - OSM (reverse geocoding)                                  │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                     Internal Data Sources (CSV/DB)                       │
+│  • district_crop_suitability.csv (93 records)                           │
+│  • market_trends.csv (900+ records, 2021-2024)                          │
+│  • karnataka_pincodes.csv (thousands of villages)                       │
+│  • Seed Dealer Database (38 dealers, in-memory)                         │
+└─────────────────────────────────────────────────────────────────────────┘
                                     │   Data Sources          │
                                     │                         │
                                     │  • district_crop_       │
@@ -203,19 +292,48 @@ Wait 60 seconds, then open: **http://localhost:5173**
 
 ## 🚀 API Endpoints
 
-### Crop Recommendations
+### Crop Recommendations (Village-Level)
 ```http
 POST /api/recommendations
 Content-Type: application/json
 
+# Option 1: Pincode-based (auto-resolves to village/district)
 {
-  "district": "BANGALORE",
+  "pincode": "560001",
   "language": "en",          # "en" or "kn"
   "season": "KHARIF"         # Optional: KHARIF/RABI/ZAID
 }
+
+# Option 2: Village + Taluk based
+{
+  "village": "Malur",
+  "taluk": "Kolar",
+  "district": "KOLAR",        # Auto-detected or provided
+  "language": "kn"
+}
+
+# Option 3: GPS Coordinates (granular)
+{
+  "latitude": 12.9716,
+  "longitude": 77.5946,
+  "language": "en"
+}
+
+# Option 4: District-only (fallback)
+{
+  "district": "BANGALORE",
+  "language": "en"
+}
 ```
 
-**Response**: Top 3 crops with scores (0-100) and reasons in selected language
+**Response**: Top 3 crops with scores (0-100), AI-generated reasons, fertilizer plans, and seed dealers
+
+**Data Flow**:
+1. Location resolution (pincode/village/GPS → district)
+2. Weather + Soil data fetch (coordinate-based)
+3. Market data + Crop suitability query (from database)
+4. AI enhancement (Gemini analyzes all data)
+5. Response with recommendations + dealers + profit estimates
 
 ### Fertilizer Recommendations
 ```http
@@ -243,17 +361,26 @@ GET /api/weather?lat=12.9716&lon=77.5946
 GET /api/soil?lat=12.9716&lon=77.5946
 ```
 
-### Location Services
+### Location Services (Village-Level)
 ```http
-GET /api/location/pincode/{pincode}     # Resolve pincode to district
-GET /api/location/reverse?lat=X&lon=Y   # Reverse geocode to district
+# Pincode to Village/District resolution
+GET /api/location/pincode/{pincode}
+# Returns: {village, taluk, district, fullAddress}
+
+# GPS to Village/District (reverse geocoding)
+GET /api/location/reverse?lat=12.9716&lon=77.5946
+# Returns: {village, district, address}
+
+# Village name autocomplete suggestions
+GET /api/location/suggestions?q=Malur
+# Returns: [{"village": "Malur", "taluk": "Kolar", "district": "KOLAR"}]
 ```
 
 ---
 
 ## 📊 Dataset Structure
 
-### District Crop Suitability (`district_crop_suitability.csv`)
+### 1. District Crop Suitability (`district_crop_suitability.csv`)
 **93 records** covering 31 Karnataka districts.
 
 #### Format:
@@ -265,12 +392,60 @@ district,crop_1,season_1,score_1,crop_2,season_2,score_2,crop_3,season_3,score_3
 ```csv
 Bengaluru Urban,Ragi/Vegetables,Kharif/Rabi,75,Paddy,Kharif,60,Groundnut/Millet,Kharif,50
 Mysuru,Paddy,Kharif,85,Ragi,Kharif,75,Maize/Pulses,Kharif/Rabi,65
+Uttara Kannada,Arecanut/Cashew,All seasons,90,Paddy,Kharif,75,Banana/Spices,All seasons,70
 ```
 
 **Key Points:**
-- ✅ 3 crops per district with season and suitability score
-- ✅ Backend filters crops by district+season before AI sees them
+- ✅ 3 crops per district with season and suitability score (0-100)
+- ✅ Backend filters crops by district+season before sending to AI
+- ✅ Used as base data layer for village-level recommendations
 - ✅ Loaded automatically on startup into H2 database
+
+---
+
+### 2. Karnataka Pincode Database (`karnataka_pincodes.csv`)
+**Thousands of villages** mapped to districts.
+
+#### Format:
+```csv
+pincode,village,taluk,district,state
+```
+
+#### Sample:
+```csv
+560001,Bangalore GPO,Bangalore,Bengaluru Urban,Karnataka
+571401,Mysore HO,Mysore,Mysuru,Karnataka
+581301,Sirsi,Sirsi,Uttara Kannada,Karnataka
+```
+
+**Key Points:**
+- ✅ Enables **pincode-to-village resolution**
+- ✅ Supports granular location input (village name + taluk)
+- ✅ Used by `/api/location/pincode/{pincode}` endpoint
+- ✅ Provides village-level context for recommendations
+
+---
+
+### 3. Market Trends (`market_trends.csv`)
+**900+ records** from Karnataka districts (2021-2024).
+
+#### Format:
+```csv
+District,Crop,AvgPrice,MinPrice,MaxPrice,Season,Year
+```
+
+#### Sample:
+```csv
+BANGALORE,RICE,2500,2200,2800,MONSOON,2023
+MYSORE,WHEAT,2100,1900,2300,WINTER,2023
+UTTARA KANNADA,ARECANUT,8500,7500,9500,ALL,2024
+```
+
+**Key Points:**
+- ✅ Historical price data for **cost-profit calculations**
+- ✅ Season-aware pricing trends
+- ✅ District-specific market intelligence
+- ✅ Used to calculate revenue projections
 
 ### Seed Dealers (In-Memory Database)
 **38 dealers** with complete information:
@@ -296,14 +471,17 @@ mvn clean package -DskipTests
 ```
 
 ### Manual Testing Checklist
-- [ ] Quick Start workflow completes successfully
+- [ ] **Village-level input**: Test pincode lookup (e.g., 560001 → Bangalore GPO)
+- [ ] **GPS coordinates**: Test Quick Start with location permission
+- [ ] **Village name search**: Type village name, verify autocomplete suggestions
+- [ ] Quick Start workflow completes successfully with all 3 input modes
 - [ ] Manual Search wizard (3 steps) works end-to-end
+- [ ] **Weather/Soil data**: Verify coordinate-based API calls fetch real data
+- [ ] **Market data**: Check profit calculator uses district-specific prices
 - [ ] Language toggle EN ↔ KN updates all UI text
 - [ ] Fertilizer updates when clicking different crops
-- [ ] Seed dealers display with prices and contact
+- [ ] Seed dealers display with prices and contact (filtered by location)
 - [ ] PDF export shows proper Kannada text (no garbled characters)
-- [ ] Profit calculator shows cost breakdown
-- [ ] Weather panel displays data (or mock fallback)
 - [ ] Helpline email visible in footer
 
 ---
